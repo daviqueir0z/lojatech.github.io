@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;  
+    /* faz com que o padding e a borda de um elemento sejam incluídos na largura e altura totais definidas para ele. */
+    margin: 0;
+    padding: 0;}
+/* 
+Vai guardar o valor das variáveis CSS, e toda vez que precisar usar é só chamar a variável.
+*/
+:root {
+    --primary-color: #FF4111;
+    --secondary-color: #2C3E50;
+    --accent-color: #3498DB;
+    --text-color: #2C3E50;
+    --light-gray: #F8F9FA;
+    --border-color: #E9ECEF;
+    --white-color: #FFFFFF;
+    --hover-btn: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    line-height: 1.6;
+    
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center; /* Alinha os itens do cabeçalho verticalmente */
+    justify-content: space-around; /* Centraliza os itens do cabeçalho */;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Espaçamento entre os itens do logo */
+}
+
+h1 {
+    font-size: 2rem; /* Tamanho da fonte do título, preferi deixar em unidade responsiva */
+    color: var(--white-color);
+    font-weight: bold; /* Deixa o título em negrito */
+}
+
+.fa-bolt {
+color: var(--white-color);
+font-size: 2rem; /* Tamanho do ícone */
+}
+
+.container-busca {
+    width: 100%; /* Largura total da barra de busca */
+    margin: 0 32px; 
+    max-width: 400px; /* Largura máxima da barra de busca */
+    display: flex; /* Usa flexbox para alinhar os itens */
+    align-items: center; /* Alinha os itens da barra de busca verticalmente */
+    padding: 8px 16px; /* Espaçamento interno da barra de busca */
+    background-color: var(--light-gray); 
+    border-radius: 24px;
+  
+}
+.container-busca input {
+    width: 100%;  
+    border: none; /* Remove a borda padrão do input */
+    outline: none; /* Remove o contorno ao focar no input */
+    padding: 6px; /* Espaçamento interno do input */
+    font-size: 12px; /* Tamanho da fonte do input */
+    background-color: var(--light-gray
+    );
+
+}
+
+.container-busca button{  /* Estiliza o botão da barra de busca */
+    border: none;
+    margin: 0 ; /* Espaçamento entre o botão e o input */
+    background-color: transparent;
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+.fa-magnifying-glass {
+    color: var(--primary-color);
+    font-size: 12px; /* Tamanho da fonte do ícone */
+}
+
+.menu {
+    background-color: var(--secondary-color);
+    display: flex; /* Usa flexbox para alinhar os itens do menu */
+    justify-content: center; /* Centraliza os elementos do menu */
+
+    /* justify-content: center em .menu alinha os itens diretos de .menu no eixo principal — no seu caso o único item direto é o <nav>, então ele é centralizado dentro de .menu. */
+}
+
+.menu nav{
+    display: flex; /* Usa flexbox para alinhar os itens do menu */
+    justify-content: center; /* Centraliza os itens  do menu */
+    align-items: center; /* Alinha os itens do menu verticalmente */
+    gap: 16px; /* Espaçamento entre os itens do menu */
+    width: 100%;
+    max-width: 1200px; /* Largura máxima do menu */
+    padding: 8px 32px; /* Espaçamento interno do menu */
+}
+
+.botao-categorias {
+    display: inline-flex; /* mantém comportamento de botão e facilita alinhamento */
+    justify-content: center; /* Alinha os itens do botão ao centro horizontalmente */
+    align-items: center; /* centra verticalmente ícone + texto  */
+    border: none; /* Remove a borda padrão do botão */
+    gap: 8px; /* Espaçamento entre o ícone e o texto */
+    border-radius: 24px; /* Arredonda os cantos do botão */
+    color: var(--white-color);
+    background: none; /* Remove o fundo do botão */
+    padding: 12px 24px; /* Adiciona preenchimento ao botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    font-size: 1rem; /* garante que o ícone tenha proporção do texto */
+}
+
+.botao-categorias:hover {
+    background-color: var(--hover-btn); /* Fundo ao passar o mouse */
+}
+
+.ativo {
+    background-color: var(--primary-color);
+}
+
+.secao-hero {
+background: #b43a61;
+background: linear-gradient(90deg, rgba(180, 58, 97, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+color: var(--white-color); /* cor dos textos */
+text-align: center; /* centraliza apenas o texto */
+padding: 48px 32px; /* espaçamento interno */ 
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 32px;
+}
+
+/*  estilizar a classe produtos que abriga o container de cartões*/
+.produtos{
+    width: 100%;
+    max-width: 1200px;
+    padding: 32px;  /* espaçamento interno */
+    margin: 0 auto; /* centraliza o conteúdo */
+}
+
+/* estilizar a classe produtos-container que abriga os cartões */
+.produtos-container{
+  display: grid; /* usa grid para organizar os cartões, o grid seria uma grade de blocos */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  /* o grid-template-columns define como as colunas serão distribuídas */
+
+/* 
+Importante definir como vc quer sua vitrine
+1. como vai ser a disposição dos itens?
+usando o auto-fill eu não escolho quantos itens aparecem em cada linha, o grid se ajusta automaticamente.
+
+2. tamanho dos itens
+
+1fr é igual a uma fração, uma fração é a tela inteira. 
+
+o repeat() permite criar colunas repetidas automaticamente
+o minmax() permite definir um tamanho mínimo e máximo para as colunas
+o minmax define o tamanho mínimo e máximo das colunas
+*/
+}
+
+.cartao-produto {
+ background-color: var(--white-color);
+ border-radius: 16px;
+
+ /* box-shadow pode copiar de sites, ele cria uma sombra nas caixinhas */
+ box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+cursor: pointer; /* muda o cursor para indicar que é clicável */
+overflow: hidden;  /*  escondendo o conteúdo que transborda do cartão */
+}
+/*  fazendo o efeitto de pular do cartão */
+.cartao-produto:hover {
+box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+transform: translateY(-16px);
+transition: 0.5s; 
+
+/*  fazendo o efeito de pular do cartão, pegamos um modelo de box-shadow. 
+usando o transform: translateY(-5px) para mover o cartão para cima.
+
+Y - vertical
+X - horizontal
+
+*/
+}
+
+.imagem-produto{
+    width: 100%;
+    height: 180px; 
+    object-fit: cover; /* garante que a imagem cubra todo o espaço disponível, sem distorcer */
+}
+
+.info-produto {
+    padding: 16px; /* espaçamento interno */
+}
+
+.nome-produto {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px; /* espaçamento abaixo do nome */
+}
+
+.descricao-produto {
+    font-size: 13px;
+    margin-bottom: 12px; /* espaçamento abaixo da descrição */
+}
+
+.preco-produto {
+    font-size: 20px;
+    color: var(--primary-color);
+    margin-bottom: 12px; /* espaçamento abaixo do preço */
+    font-weight: bold;
+}
+
+.botao-produto {
+    width: 100%;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    border: none;
+    padding: 12px; /* espaçamento interno, funciona também para aumentar o tamanho*/
+    cursor: pointer; /* muda o cursor para indicar que é clicável */
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: 0.3s; /* Transição suave para o hover */
+}
+
+.botao-produto:hover {
+    background-color: hsl(211, 39%, 72%);
+
+}
